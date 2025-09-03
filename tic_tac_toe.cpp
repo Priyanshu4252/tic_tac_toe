@@ -242,22 +242,16 @@ int main(){
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
-                        //{'0','0','0','0','0','0','|','0','0','0','0','0','0','|','0','0','0','0','0','0'},
-                        //{'0','0','0','0','0','0','|','0','0','0','0','0','0','|','0','0','0','0','0','0'},
                         {'-','-','-','-','-','-','|','-','-','-','-','-','-','|','-','-','-','-','-','-'},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
-                        //{'0','0','0','0','0','0','|','0','0','0','0','0','0','|','0','0','0','0','0','0'},
-                        //{'0','0','0','0','0','0','|','0','0','0','0','0','0','|','0','0','0','0','0','0'},
                         {'-','-','-','-','-','-','|','-','-','-','-','-','-','|','-','-','-','-','-','-'},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '}};
-                        //{'0','0','0','0','0','0','|','0','0','0','0','0','0','|','0','0','0','0','0','0'},
-                        //{'0','0','0','0','0','0','|','0','0','0','0','0','0','|','0','0','0','0','0','0'},
     std::cout <<"----------------------------------------------------------\n";
     std::cout <<"------------WELCOME TO THE TICK TAC TO GAME---------------\n";
     std::cout <<"----------------------------------------------------------\n";
@@ -292,6 +286,10 @@ int main(){
             grid [2][2] ='/';
             grid [3][4] ='\\';
             grid [3][1] ='/';
+            if(backend_grid[0][0] == '9' || backend_grid[0][0]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [0][0] ='9';
             grid_update(grid);
             chances += 1;
@@ -305,6 +303,10 @@ int main(){
             grid [2][9] ='/';
             grid [3][11] ='\\';
             grid [3][8] ='/';
+            if(backend_grid[0][2] == '9' || backend_grid[0][2]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [0][2] ='9';
             grid_update(grid);
             chances += 1;
@@ -318,6 +320,10 @@ int main(){
             grid [2][17] ='/';
             grid [3][19] ='\\';
             grid [3][16] ='/';
+            if(backend_grid[0][4] == '9' || backend_grid[0][4]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [0][4] = '9';
             grid_update(grid);
             chances += 1;
@@ -331,6 +337,10 @@ int main(){
             grid [7][2] ='/';
             grid [8][4] ='\\';
             grid [8][1] ='/';
+            if(backend_grid[2][0] == '9' || backend_grid[2][0]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [2][0] = '9';
             grid_update(grid);
             chances += 1;
@@ -344,6 +354,10 @@ int main(){
             grid [7][9] ='/';
             grid [8][11] ='\\';
             grid [8][8] ='/';
+            if(backend_grid[2][2]== '9' || backend_grid[2][2]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [2][2] = '9';
             grid_update(grid);
             chances += 1;
@@ -357,6 +371,10 @@ int main(){
             grid [7][17] ='/';
             grid [8][19] ='\\';
             grid [8][16] ='/';
+            if(backend_grid[2][4] == '9' || backend_grid[2][4]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [2][4] = '9';
             grid_update(grid);
             chances += 1;
@@ -370,6 +388,10 @@ int main(){
             grid [12][2] ='/';
             grid [13][4] ='\\';
             grid [13][1] ='/';
+            if(backend_grid[4][0] == '9' || backend_grid[4][0]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [4][0] = '9';
             grid_update(grid);
             chances += 1;
@@ -383,6 +405,10 @@ int main(){
             grid [12][9] ='/';
             grid [13][11] ='\\';
             grid [13][8] ='/';
+            if(backend_grid[4][2] == '9' || backend_grid[4][2]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [4][2] = '9';
             grid_update(grid);
             chances += 1;
@@ -396,6 +422,10 @@ int main(){
             grid [12][17] ='/';
             grid [13][19] ='\\';
             grid [13][16] ='/';
+            if(backend_grid[4][4] == '9' || backend_grid[4][4]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [4][4] = '9';
             grid_update(grid);
             chances += 1;
@@ -434,6 +464,10 @@ int main(){
             grid [2][1] ='\\';
             grid [3][3] ='/';
             grid [3][2] ='\\';
+            if(backend_grid[0][0] == '9' || backend_grid[0][0]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [0][0] ='3';
             grid_update(grid);
             chances += 1;
@@ -447,6 +481,10 @@ int main(){
             grid [2][8] ='\\';
             grid [3][10] ='/';
             grid [3][9] ='\\';
+            if(backend_grid[0][2] == '9' || backend_grid[0][2]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [0][2] ='3';
             grid_update(grid);
             chances += 1;
@@ -460,6 +498,10 @@ int main(){
             grid [2][15] ='\\';
             grid [3][17] ='/';
             grid [3][16] ='\\';
+            if(backend_grid[0][4] == '9' || backend_grid[0][4]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid[0][4] = '3';
             grid_update(grid);
             chances += 1;
@@ -473,6 +515,10 @@ int main(){
             grid [7][1] ='\\';
             grid [8][3] ='/';
             grid [8][2] ='\\';
+            if(backend_grid[2][0] == '9' || backend_grid[2][0]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [2][0] = '3';
             grid_update(grid);
             chances += 1;
@@ -486,6 +532,10 @@ int main(){
             grid [7][8] ='\\';
             grid [8][10] ='/';
             grid [8][9] ='\\';
+            if(backend_grid[2][2] == '9' || backend_grid[2][2]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [2][2] = '3'; 
             grid_update(grid);
             chances += 1;
@@ -499,6 +549,10 @@ int main(){
             grid [7][15] ='\\';
             grid [8][17] ='/';
             grid [8][16] ='\\';
+            if(backend_grid[2][4] == '9' || backend_grid[2][4]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [2][4] = '3';
             grid_update(grid);
             chances += 1;
@@ -512,6 +566,10 @@ int main(){
             grid [12][1] ='\\';
             grid [13][3] ='/';
             grid [13][2] ='\\';
+            if(backend_grid[4][0] == '9' || backend_grid[4][0]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [4][0] = '3';
             grid_update(grid);
             chances += 1;
@@ -525,6 +583,10 @@ int main(){
             grid [12][8] ='\\';
             grid [13][10] ='/';
             grid [13][9] ='\\';
+            if(backend_grid[4][2] == '9' || backend_grid[4][2]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [4][2] = '3';
             grid_update(grid);
             chances += 1;
@@ -538,6 +600,10 @@ int main(){
             grid [12][15] ='\\';
             grid [13][17] ='/';
             grid [13][16] ='\\';
+            if(backend_grid[4][4] == '9' || backend_grid[4][4]=='3'){
+                std::cout <<"INVALID INPUT";
+                return 0;
+            }
             backend_grid [4][4] = '3';
             grid_update(grid);
             chances += 1;
