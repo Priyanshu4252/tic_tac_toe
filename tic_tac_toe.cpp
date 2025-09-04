@@ -230,9 +230,8 @@ void grid_update(char grid[14][20]){
             std::cout << '\n';
     }
 }
-int main(){
-    bool is_running = true,is_running1=true,is_running2=true,is_running3=true,is_running4=true,is_running5=true,is_running6=true,is_running7=true,is_running8=true;
-    int chances = 0;
+bool game_runner_mode_1(bool is_running,bool is_running1,bool is_running2,bool is_running3,bool is_running4,bool is_running5,bool is_running6,bool is_running7,bool is_running8,int input,int round){
+    int chances=0;
     char backend_grid[][5] = { {' ','|',' ','|',' '},
                                 {'-','|','-','|','-'},
                                 {' ','|',' ','|',' '},
@@ -252,22 +251,6 @@ int main(){
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '},
                         {' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' '}};
-    std::cout <<"----------------------------------------------------------\n";
-    std::cout <<"------------WELCOME TO THE TICK TAC TO GAME---------------\n";
-    std::cout <<"----------------------------------------------------------\n";
-    std::cout <<"---------HERE ARE THE KEY MAPPING FOR THE GAME------------\n";
-    std::cout <<"----------------------------------------------------------\n";
-    std::cout <<"     |     |     \n";
-    std::cout <<"  1  |  2  |  3  \n";
-    std::cout <<"     |     |     \n";
-    std::cout <<"-----|-----|-----\n";
-    std::cout <<"     |     |     \n";
-    std::cout <<"  4  |  5  |  6  \n";
-    std::cout <<"     |     |     \n";
-    std::cout <<"-----|-----|-----\n";
-    std::cout <<"     |     |     \n";
-    std::cout <<"  7  |  8  |  9  \n";
-    std::cout <<"     |     |     \n";
     while (is_running)
     {
         int user_input_1;   
@@ -443,12 +426,21 @@ int main(){
             is_running =false ;
             break;
         }  
-        if (chances == 9){
-            std::cout <<"----------------------------------------------------------\n";
-            std::cout <<"----------------------IT'S A  DRAW------------------------\n";
-            std::cout <<"----------------------------------------------------------\n";
-            break;
+        if(input == 1){
+            if (chances == 9){
+                std::cout <<"----------------------------------------------------------\n";
+                std::cout <<"----------------------IT'S A  DRAW------------------------\n";
+                std::cout <<"----------------------------------------------------------\n";
+                break;
+            }
         }
+        else if (input ==2 )
+        {
+            if(chances == 9){  
+                break;
+            }
+        }
+        
         int user_input_2;                                 //Circle
         std::cout <<"----------------------------------------------------------\n";                            // Cross
         std::cout <<"                Enter user input(Player2): ";
@@ -623,4 +615,45 @@ int main(){
             break;
         }
     }
+        if(chances == 9 && input == 2){
+            while(is_running){
+                round ++;
+                std:: cout << "-----------------------------------------------------------\n";
+                std:: cout << "----------------------ROUND NUMBER " << round << "-----------------------\n";
+                if (game_runner_mode_1(is_running,is_running1,is_running2,is_running3,is_running4,is_running5,is_running6,is_running7,is_running8,input,round)==true){
+                    
+                    game_runner_mode_1(is_running,is_running1,is_running2,is_running3,is_running4,is_running5,is_running6,is_running7,is_running8,input,round);
+                }
+                else{
+                    is_running= game_runner_mode_1(is_running,is_running1,is_running2,is_running3,is_running4,is_running5,is_running6,is_running7,is_running8,input,round);
+                }
+            }
+        }
+}
+int main(){
+    bool is_running = true,is_running1=true,is_running2=true,is_running3=true,is_running4=true,is_running5=true,is_running6=true,is_running7=true,is_running8=true;
+    int input,round=1;
+    
+    std::cout <<"-----------------------------------------------------------\n";
+    std::cout <<"------------WELCOME TO THE TICK TAC TO GAME----------------\n";
+    std::cout <<"   PRESS 1 TO PLAY REGULAR MODE AND 2 FOR ENDLESS MODE: ";
+    do {
+        std::cin  >> input;
+    }while(input!=1 && input!=2);
+    std::cout <<"-----------------------------------------------------------\n";
+    std::cout <<"---------HERE ARE THE KEY MAPPING FOR THE GAME-------------\n";
+    std::cout <<"-----------------------------------------------------------\n";
+    std::cout <<"                       |     |     \n";
+    std::cout <<"                    1  |  2  |  3  \n";
+    std::cout <<"                       |     |     \n";
+    std::cout <<"                  -----|-----|-----\n";
+    std::cout <<"                       |     |     \n";
+    std::cout <<"                    4  |  5  |  6  \n";
+    std::cout <<"                       |     |     \n";
+    std::cout <<"                  -----|-----|-----\n";
+    std::cout <<"                       |     |     \n";
+    std::cout <<"                    7  |  8  |  9  \n";
+    std::cout <<"                       |     |     \n";
+    game_runner_mode_1(is_running,is_running1,is_running2,is_running3,is_running4,is_running5,is_running6,is_running7,is_running8,input,round);
+    return 0;
 }
